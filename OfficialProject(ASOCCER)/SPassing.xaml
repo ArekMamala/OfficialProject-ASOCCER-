@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="OfficialProject_ASOCCER_.SPassing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OfficialProject_ASOCCER_"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Background>
+        <ImageBrush Stretch="Fill"/>
+    </Page.Background>
+    <!--MainG Grid -->
+    <Grid Margin="0,0,-244.667,0" >
+        <Grid.Background>
+            <!--background image  -->
+            <ImageBrush Stretch="Fill" ImageSource="Assets/soccerPitch.jpg" Opacity="0.3">
+            </ImageBrush>
+        </Grid.Background>
+        <!--stackPanel for logo and home button -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment ="Top" HorizontalAlignment="Left"  Height="150" Margin="20">
+            <!--button to click home-->
+            <Button Click="Home" Height="80" Width="300" FontSize="29" FontWeight="SemiLight" FontStyle="Italic" Margin="10">HOME</Button>
+            <!--logo image-->
+            <Image x:Name="image" Height="150" Width="300" Source="Assets/ball.png" />
+        </StackPanel>
+        <!--StackPanel for textblocks and image -->
+        <StackPanel  Orientation="Horizontal" VerticalAlignment ="Center" HorizontalAlignment="Left" Margin="5,150,0,138"  Height="480" >
+            <!--image for the drill-->
+            <Image x:Name="image1" Source="Assets/sPassing.jpg" Height="600" Width="550" Margin="10" />
+            <!--stackpanel for the drill instructions-->
+            <StackPanel  VerticalAlignment ="Top" HorizontalAlignment="Right" Margin="20,-40,20,0" Height="391" >
+                <!--step1-->
+                <TextBlock x:Name="textBox" Margin="2" HorizontalAlignment="Center"  Width="320" TextWrapping="Wrap"  VerticalAlignment="Top" Foreground="Red" FontSize="20" >
+                    <TextBlock.Text>1.First step the player inside the box. Recives the ball from the left havnd side.</TextBlock.Text>
+                </TextBlock>
+                <!--step2-->
+                <TextBlock Text="2.Passes it back to the same player first time if possible." TextWrapping="Wrap" Width="320" x:Name="textBox1" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="2" Foreground="Red" FontSize="20"/>
+                <!--step3-->
+                <TextBlock x:Name="textBox2" Margin="2" TextWrapping="Wrap" Text="3.The player inside the box gets to the other side of the box." VerticalAlignment="Bottom" Width="320" Foreground="Red" FontSize="20"/>
+                <!--step4-->
+                <TextBlock x:Name="textBox3" Margin="2" HorizontalAlignment="Center"  TextWrapping="Wrap" Text="4.After getting to the other side of the box the player recives a pass from the other side and passes it back. The player does this 3 times." VerticalAlignment="Top" Height="108" Width="320" Foreground="Red" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
+        <!--StackPanel for comment box and username box-->
+        <StackPanel VerticalAlignment ="Top" HorizontalAlignment="Left" Margin="550,500,0,0" Height="280" Width="400">
+            <!--textBox for username-->
+            <TextBox x:Name="commentTxt1" Height="70" Width="350" Header="Username"  Background="White" Margin="00" TextWrapping="Wrap" />
+            <!--textbox for comments-->
+            <TextBox x:Name="commentTxt" Height="120" Width="350" Header="Comment box"  Background="White" Margin="0" TextWrapping="Wrap" />
+            <!--button for the comments-->
+            <Button x:Name="save2" Height="60" Width="150" FontSize="10" FontWeight="SemiLight" FontStyle="Italic" Margin="20" Background="#33E51C1C" Click="testSave">Add Comment</Button>
+        </StackPanel>
+        <!--button to load comments from a file-->
+        <Button x:Name="loadomments1" Click="loadComments" Height="59"  VerticalAlignment ="Top" HorizontalAlignment="Right" Width="300"  Margin="0,20,405,0" FontSize="10" FontWeight="SemiLight" FontStyle="Italic"  Background="#FFF5FABB" >Load Comment</Button>
+        <!--Grid with a scroll bar and a textblock for comments-->
+        <Grid VerticalAlignment ="Top" HorizontalAlignment="Right" Width="300" Height="659" Margin="0,60,405,0">
+            <!--scroll bar-->
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <!--textbolock forcomments-->
+                <TextBlock x:Name="commentsIn" VerticalAlignment ="Top" HorizontalAlignment="Right" Width="300"  Margin="0,80,405,0"  />
+            </ScrollViewer>
+        </Grid>
+
+    </Grid>
+</Page>
+<!--end of page-->
